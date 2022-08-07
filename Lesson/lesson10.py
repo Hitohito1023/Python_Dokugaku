@@ -1,3 +1,5 @@
+import random
+
 def hangman(word):
 	wrong = 0
 	stages = ["",
@@ -36,4 +38,9 @@ def hangman(word):
 		print("\n".join(stages[0:wrong+1]))
 		print("あなたの負けです！正解は {}.".format(word))
 
-hangman("cat")
+ans_list = ["cat", "dog", "yellow", "python"]
+num = len(ans_list) - 1
+
+ans = ans_list[random.randint(0, num)]
+
+hangman(ans)
